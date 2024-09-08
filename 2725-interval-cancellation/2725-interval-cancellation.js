@@ -8,7 +8,7 @@ var cancellable = function(fn, args, t) {
     fn(...args);
     
     const timer = setInterval(() => fn(...args), t);
-    // console.log(timer); // timer ID 확인
+    // console.log(timer); // interval ID 확인
     
     const cancelFn = () => clearInterval(timer);
     
