@@ -30,4 +30,9 @@ const obj = {
 console.log(obj.b); // '함수'라는 함수 출력
 console.log(obj.b()); // "this로 새로운 값"
 console.log(obj.a); // "this로 새로운 값"
+
+`this` mdn
+- 코드가 실행되어야 할 컨텍스트를 의미함(가르킴 refers to). => 다른 객체에서도 재사용할 수 있게 함. prototype 개념과도 연결.
+    - 첫 문장: The this keyword refers to the context where a piece of code, such as a function's body, is supposed to run. Most typically, it is used in object methods, where this refers to the object that the method is attached to, thus allowing the same method to be reused on different objects.
+- reference in programming(wikipedia): In computer programming, a reference is a value that enables a program to indirectly access a particular datum, such as a variable's value or a record, in the computer's memory or in some other storage device.
 */
