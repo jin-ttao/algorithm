@@ -40,5 +40,3 @@ console.log(root); // [4,7,2,6,9,1,3]
     - 확인해본 내용: 트리는 참조형이라 원본이 계속 수정되고, 각 재귀 호출이 하위 트리 전체를 바꾸게 됨.
     - 출처: We must realize that references will be maintained down the object tree, which is why we can accomplish this in O(n) time! (https://dev.to/nas5w/building-deep-trees-in-javascript-using-object-references-4565)
 */
-
-
