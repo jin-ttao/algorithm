@@ -49,8 +49,6 @@ const isSymmetric = function(root) {
     };
     
     switchPosition(root.left);
-    console.log(root.left);
-    console.log(root.right);
     // console.log(JSON.stringify(root.left));
         // 출력: {"val":2,"left":{"val":4,"left":null,"right":null},"right":{"val":3,"left":null,"right":null}}
 
