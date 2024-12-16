@@ -29,6 +29,17 @@ const countNodes = function(root) {
 };
 
 /*
+// 클로저로 풀 필요 없었던 문제. 더 간단하게 재귀 반환값을 바로 사용해도 됐다.
+const countNodes = function(root) {
+    if (root === null){
+        return 0;
+    }
+
+    return 1 + countNodes(root.left) + countNodes(root.right);
+}
+*/
+
+/*
 - complete 조건
     - 마지막 레벨 전 노드들이 모두 채워져있음
     - 마지막 노드가 가능한 왼쪽에 있어야 함 > 오른쪽에만 있다면?
