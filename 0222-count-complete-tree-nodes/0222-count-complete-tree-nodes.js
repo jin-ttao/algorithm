@@ -15,27 +15,13 @@ const countNodes = function(root) {
     
     const countFromRoot = function(root) {
         if (root === null) {
-            console.log("null", count);
             return count;
         }
 
-        if (root.left === null && root.right === null) {
-            count += 1;
-            return count;
-        }
-
-        if (root.left !== null || root.right !== null) {
-            count += 1;
-
-            if (root.left !== null) {
-                countFromRoot(root.left);
-            }
-
-            if (root.right !== null) {
-                countFromRoot(root.right);
-            }
-            return;
-        }
+        count += 1;
+        countFromRoot(root.left);
+        countFromRoot(root.right);
+        return;
     }
     countFromRoot(root);
 
@@ -52,4 +38,5 @@ const countNodes = function(root) {
 - 접근: 자식이 있는 노드 -> 카운트 + 1
   - 왼쪽/오른쪽 자식 존재 여부 확인 -> 자식이 있으면 해당 자식 노드에 대해 재귀
 - 콘솔로 진행 흐름 확인할 때, 경우에 따라 count 뒤에 위치시키는게 동작 흐름 파악이 쉬울 수 있음.
+- 재귀 조건문을 복잡하기 할 필요 없음 > 상위에서 매개변수로 들어온 값을 null로 모두 검사해주기 때문에 내부에서 중복 체크할 필요 없음
 */
