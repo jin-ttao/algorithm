@@ -16,7 +16,7 @@ const majorityElement = function(nums) {
             count[key] += 1;
         }
     }
-    console.log(count);
+
     for (const c in count) {
         if (maxCount <= count[c]) {
             maxCount = count[c];
