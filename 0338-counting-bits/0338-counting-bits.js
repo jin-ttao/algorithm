@@ -33,6 +33,8 @@ const countBits = function(n) {
 
 # 문제가 왜 countBits일까?
 - 컴퓨터과학에서 bit 계산시 1만큼 bit를 계산하는 건가? 찾아보자.
+- 찾아보니 컴퓨터과학에서 비트 연산은 굉장히 중요한 기초 개념이었고 유관 이론이 여러 있었다.
+    - 정확한 개념은 아직 이해가 어렵지만 Hamming weight 라는 개념도 있고, 지금 깊게 볼 건 아니니 염두에 두고 넘어갈 것.
 
 # JavaScript Parser
 const num = 11.toString();
