@@ -69,28 +69,23 @@ const maxSubArray = function(nums) {
         }
         indexStart = i;
     }
-    console.log("end 구해보자");
+
     for (let j = nums.length - 1; j > indexOfMaxElement; j--) {
         if (j === indexOfMaxElement + 1) {
             indexEnd = indexOfMaxElement;
-            console.log("@ indexEnd 마지막 검사", nums[j]);
             break;
         }
         if (nums[j] <= 0) {
-            console.log("@ indexEnd 음수야 패스", nums[j]);
             continue;
         }
         if (getSum(nums, j, indexOfMaxElement + 1) <= 0) {
-            console.log("@ indexEnd 버리는게 나아 패스", nums[j]);
             continue;
         }
         if (nums[j + 1] <= 0 && nums[j] > 0) {
             indexEnd = j;
         }
-        console.log("@ 한바퀴", indexEnd);
     }
-    
-    console.log("최종", indexStart, indexEnd);
+
     return getSum(nums, indexStart, indexEnd);
 };
 */
