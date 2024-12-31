@@ -25,5 +25,6 @@ const isPalindrome = function(x) {
 
 ### 접근
 - Palindrome은 거꾸로 해도 동일한 형식을 의미하므로, reverse 배열로 변환 후 요소를 모두 비교해보는 방법
+- 단, reverse()는 원본 배열에 영향을 주므로 원본을 보존하려면 toReversed() 사용 가능
 
 */
