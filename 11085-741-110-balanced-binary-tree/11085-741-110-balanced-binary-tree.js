@@ -12,35 +12,34 @@
  */
 
 const isBalanced = function(root) {
-    if (root == null) {
+    if (root === null) {
         return true;
     }
-
-	if (getHeight(root) == -1) {
+    if (getHeight(root) === -1) {
         return false;
     }
-
-	return true;
+    
+    return true;
 }
 
 const getHeight = function(root) {
-	if (root == null) {
+    if (root === null) {
         return 0;
     }
-
-	const leftHeight = getHeight(root.left);
-	const rightHeight = getHeight(root.right);
-
-	if (leftHeight == -1 || rightHeight == -1) {
+    
+    const leftHeight = getHeight(root.left);
+    const rightHeight = getHeight(root.right);
+    
+    if (leftHeight === -1 || rightHeight === -1) {
         return -1;
     }
-
+    
     if (Math.abs(leftHeight - rightHeight) > 1) {
         return -1;
     }
-
-	return Math.max(leftHeight, rightHeight) + 1;
-};
+    
+    return Math.max(leftHeight, rightHeight) + 1;
+}
 
 /*
 - 함수의 역할을 분리해보는 접근을 활용해보자. 함수가 해내야 할 것이 명확히 보여서 구조를 짜기 좋다.
