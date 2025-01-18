@@ -12,7 +12,7 @@
 
 ## 알고리즘 풀고 배운 것
 
-[문서 바로가기](https://github.com/jin-ttao/til/blob/main/algorithm/algorithm-checkout.md)
+[문서 바로가기 (*새 페이지로 이동)](https://github.com/jin-ttao/til/blob/main/algorithm/algorithm-checkout.md)
 
 <img width="500" alt="toc-checkout" src="assets/toc-checkout.png">
 
@@ -20,6 +20,6 @@
 
 ## 알고리즘 풀이 습관 복기
 
-[문서 바로가기](https://github.com/jin-ttao/til/blob/main/algorithm/algorithm-review.md)
+[문서 바로가기 (*새 페이지로 이동)](https://github.com/jin-ttao/til/blob/main/algorithm/algorithm-review.md)
 
 <img width="500" alt="toc-review" src="assets/toc-review.png">
