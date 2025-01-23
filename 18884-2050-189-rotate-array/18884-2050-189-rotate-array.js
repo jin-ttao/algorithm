@@ -31,9 +31,11 @@ const rotate = function(nums, k) {
 
 ### 첫 시도
 const rotate = function(nums, k) {
-    const spliceCount = nums.length - k >= 0 ? Math.abs(nums.length - k);
+    k = k % nums.length;
+
+    const spliceCount = nums.length - k;
     const splice = nums.splice(0, spliceCount);
-    splice.forEach(s => nums.push(s));
+    nums.push(...splice);
 
     return nums;
 };
