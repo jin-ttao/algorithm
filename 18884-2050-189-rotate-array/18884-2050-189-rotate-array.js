@@ -1,0 +1,37 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+const rotate = function(nums, k) {
+    const count = k % nums.length;
+
+    if (count !== 0) {
+        let temp = nums.slice(-count).concat(nums.slice(0, -count));
+
+        for (let i = 0; i < nums.length; i++) {
+            nums[i] = temp[i];
+        }
+    }    
+};
+
+/*
+### 문제정의
+- input: 정수가 담긴 배열 nums, 자리 교체 발생 횟수 k
+- output: 자리 교체가 완료된 배열 nums (in-place 반환)
+
+### 접근
+- 처음에는, 자리 교체는 마지막 요소의 위치가 앞으로 이동하는 것으로 발생하기 때문에 마지막 요소를 제어하자고 생각함.
+- 하지만 반대로, 앞 요소들을 뒤로 이동시키는 것으로 접근하도록 함.
+    - 주어진 배열 nums를 수정해서 nums를 그대로 반환해야 하기 때문에, 
+자리 교체가 발생하는 것 처럼 보이는 마지막
+
+### 첫 시도
+const rotate = function(nums, k) {
+    const spliceCount = nums.length - k >= 0 ? Math.abs(nums.length - k);
+    const splice = nums.splice(0, spliceCount);
+    splice.forEach(s => nums.push(s));
+
+    return nums;
+};
+*/
