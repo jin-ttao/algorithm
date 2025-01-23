@@ -12,10 +12,13 @@ const rotate = function(nums, k) {
         for (let i = 0; i < nums.length; i++) {
             nums[i] = temp[i];
         }
-    }    
+    }
 };
 
 /*
+### 풀이 리뷰
+- nums를 in-place 반환하는 것만 지키면 됨. 다른 배열 활용해서 계산 완료하고, nums 요소들을 모두 교체하는 방식.
+
 ### 문제정의
 - input: 정수가 담긴 배열 nums, 자리 교체 발생 횟수 k
 - output: 자리 교체가 완료된 배열 nums (in-place 반환)
@@ -23,8 +26,8 @@ const rotate = function(nums, k) {
 ### 접근
 - 처음에는, 자리 교체는 마지막 요소의 위치가 앞으로 이동하는 것으로 발생하기 때문에 마지막 요소를 제어하자고 생각함.
 - 하지만 반대로, 앞 요소들을 뒤로 이동시키는 것으로 접근하도록 함.
-    - 주어진 배열 nums를 수정해서 nums를 그대로 반환해야 하기 때문에, 
-자리 교체가 발생하는 것 처럼 보이는 마지막
+    - 주어진 배열 nums를 수정해서 nums를 그대로 반환해야 하기 때문.
+    - 반대로 사고해서 앞 부분을 복사해서 뒤로 붙일 수 있도록 접근
 
 ### 첫 시도
 const rotate = function(nums, k) {
