@@ -15,7 +15,9 @@ const combinationSum = function(candidates, target) {
         }
 
         for (let i = start; i < candidates.length; i++) {
-            if (candidates[i] > remainer) break;
+            if (candidates[i] > remainer) {
+                break;
+            }
 
             combo.push(candidates[i]);
             backtrack(remainer - candidates[i], combo, i);
@@ -29,7 +31,12 @@ const combinationSum = function(candidates, target) {
 
 
 /*
-문제점
+### 백트래킹 접근 관련
+- push(), pop() 통해서 조합 만들고 되돌리기를 반복
+- remainer 0 되면 유효한 조합을 찾은 것으로 간주
+⁠- start 인덱스를 유지 -> 같은 숫자 재사용 가능 (start를 매개변수로 넘겨주는 이유)
+
+### 기존 접근(나눗셈 활용) 문제점
 - 나눗셈으로 가능한 조합을 찾으면 한계가 있었음 (다른 풀이들은 백트래킹 활용해서 모든 조합을 찾아냄)
     - e.g. target=18, candidates=[2,3,7]일 때
     - 18 / 2 = 9 → [2,2,2,2,2,2,2,2,2]만 찾음
