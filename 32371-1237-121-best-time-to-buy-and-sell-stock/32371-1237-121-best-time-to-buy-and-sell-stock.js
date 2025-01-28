@@ -18,9 +18,38 @@ const maxProfit = function(prices) {
 };
 
 /*
+### 풀이복기
+- 한 번의 순회로 최소값, 최대값을 업데이트 하는 과정
+
 ### 문제정의
 - input: 0, 양의 정수를 요소로 갖는 배열
 - output: 뒤 요소에서 앞 요소를 뺐을 때 가장 큰 양의 값 (양의 값이 없을 때 0 반환)
+
+### 이번 풀이 (오답)
+const maxProfit = function(prices) {
+    const remain = [...prices];
+
+    for (let i = 0; i < prices.length; i++) {
+        remain.shift(); // O(n) 연산
+
+        if (remain.length === 0) {
+            return 0;
+        }
+
+        const max = Math.max(...remain); // O(n) 연산
+        if (prices[i] >= max) {
+            continue;
+        }
+
+        const indexOfMax = remain.findIndex(el => el === max); // O(n) 연산
+        const remainBeforeMax = remain.slice(i, indexOfMax); // O(n) 연산
+        const min = Math.min(...remainBeforeMax); // O(n) 연산
+        if (prices[i] <= min) {
+            console.log(i)
+            return max - prices[i];
+        }
+    }
+};
 
 ### 접근
 - 최대값, 최소값 개념을 활용하는 것이 계산 횟수를 줄일 수 있을 것이라 판단
@@ -32,33 +61,6 @@ const maxProfit = function(prices) {
 - 배열 요소를 한바퀴는 순회해야 하나? 요소마다 이 이후에 가장 큰 값과의 차이를 모두 계산한 값을 요소로 하는 배열 만들기.
 - 또 조건 중 하나가 이익 안나면, 즉 감소하기만하면 0반환. 내림차순이면 바로 0 반환하면 됨.
 - index 간 차이를 확인하는 이러한 문제에도 패턴이 있을까?
-
-### 이번 풀이 (오답)
-const maxProfit = function(prices) {
-    const remain = [...prices];
-
-    for (let i = 0; i < prices.length; i++) {
-        remain.shift();
-
-        if (remain.length === 0) {
-            return 0;
-        }
-
-        const max = Math.max(...remain);
-        if (prices[i] >= max) {
-            continue;
-        }
-
-        const indexOfMax = remain.findIndex(el => el === max);
-        const remainBeforeMax = remain.slice(i, indexOfMax);
-        const min = Math.min(...remainBeforeMax);
-        if (prices[i] <= min) {
-            console.log(i)
-            return max - prices[i];
-        }
-    }
-};
-
 
 ### 이전 풀이
 var maxProfit = function(prices) {
