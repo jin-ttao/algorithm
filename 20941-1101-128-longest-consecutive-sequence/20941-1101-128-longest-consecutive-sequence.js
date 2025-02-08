@@ -19,7 +19,7 @@ const longestConsecutive = function(nums) {
         const isConsecutive = numsSorted[i + 1] - numsSorted[i] === 1;
 
         if (isConsecutive) {
-            currentLength++;
+            currentLength += 1;
         } else {
             consecutiveLengths.push(currentLength);
             currentLength = 1;
