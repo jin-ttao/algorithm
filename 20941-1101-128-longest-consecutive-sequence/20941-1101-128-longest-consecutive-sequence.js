@@ -2,10 +2,6 @@
  * @param {number[]} nums
  * @return {number}
  */
-/**
- * @param {number[]} nums
- * @return {number}
- */
 const longestConsecutive = function(nums) {
     if (nums.length === 0) {
         return 0;
