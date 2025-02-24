@@ -6,8 +6,12 @@
 const findDifference = function(nums1, nums2) {
     const set1 = new Set(nums1);
     const set2 = new Set(nums2);
+    const diff = function(s1, s2) {
+        return Array.from(s1).filter(el => !s2.has(el));
+    };
 
-    return [Array.from(set1).filter(num => !set2.has(num)), Array.from(set2).filter(num => !set1.has(num))];
+    return [diff(set1, set2), diff(set2, set1)];
+    // return [Array.from(set1).filter(num => !set2.has(num)), Array.from(set2).filter(num => !set1.has(num))];
 };
 
 /*
