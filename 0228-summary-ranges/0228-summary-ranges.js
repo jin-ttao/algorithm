@@ -3,23 +3,22 @@
  * @return {string[]}
  */
 const summaryRanges = function(nums) {
+    if (!nums.length) return [];
+    
     const answer = [];
-    let start = nums[0];
-
-    for (let i = 0; i < nums.length; i++) {
-        if (i === nums.length - 1 || nums[i + 1] !== nums[i] + 1) {
-            if (start === nums[i]) {
-                answer.push(start.toString());
-            } else {
-                answer.push(`${start}->${nums[i]}`);
-            }
-
-            if (i < nums.length - 1) {
-                start = nums[i + 1];
-            }
+    let start = 0;
+    
+    for (let i = 1; i <= nums.length; i++) {
+        if (i === nums.length || nums[i] !== nums[i-1] + 1) {
+            answer.push(
+                start === i - 1 
+                    ? `${nums[start]}`
+                    : `${nums[start]}->${nums[i-1]}`
+            );
+            start = i;
         }
     }
-
+    
     return answer;
 };
 
