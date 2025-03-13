@@ -5,7 +5,7 @@
 const minCostClimbingStairs = function(cost) {
   cost.push(0);
 
-  for (let i = cost.length - 4; i >= 0; i--) {
+  for (let i = cost.length - 3; i >= 0; i--) {
       cost[i] += Math.min(cost[i + 1], cost[i + 2]);
   }
 
