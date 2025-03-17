@@ -2,23 +2,18 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
-    let prefix = strs[0];
-    let prefixLength = prefix.length;
+const longestCommonPrefix = function(strs) {
+    if (strs.length === 0 || strs[0] === "") return "";
 
-    for (let i = 1; i < strs.length; i++) {
-        let s = strs[i];
+    for (let i = 0; i < strs[0].length; i++) {
+        const char = strs[0][i];
 
-        while (prefix !== s.substring(0, prefixLength)) {
-            prefixLength -= 1;
-            if (prefixLength === 0) {
-                return "";
+        for (let j = 1; j < strs.length; j++) {
+            if (i >= strs[j].length || strs[j][i] !== char) {
+                return strs[0].substring(0, i);
             }
-
-            prefix = prefix.substring(0, prefixLength);
         }
     }
 
-    return prefix;
-    
+    return strs[0];
 };
